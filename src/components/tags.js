@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
-import { Pie, PieChart, Label } from 'recharts';
+import { Pie, PieChart, Label, Cell } from 'recharts';
 import PropTypes from 'prop-types';
 import Section from './shared/section';
+
+const COLORS = [
+  '#43D2B6',
+  '#37C8BC',
+  '#2ABEC2',
+  '#42A8C0',
+  '#2397AF',
+  '#03869D',
+  '#00667C',
+  '#00576C',
+  '#00475C',
+  '#002A3E'
+];
 
 const labelBuilderPercentage = ({ name, percent }) => `${name} ${(percent * 100).toFixed(2)} %`;
 
@@ -39,8 +52,11 @@ export default class Tags extends Component {
                 label={labelBuilderPercentage}
                 innerRadius={70}
                 outerRadius={90}
-                fill="#2d7788"
+                fill="#42A8C0"
               >
+                {
+                  byUsage.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                }
                 <Label value={ 'In project terms' } position="center" />
               </Pie>
             </PieChart>
@@ -52,8 +68,11 @@ export default class Tags extends Component {
                 label={labelBuilderMonths}
                 innerRadius={70}
                 outerRadius={90}
-                fill="#2d7788"
+                fill="#42A8C0"
               >
+                {
+                  byTime.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                }
                 <Label value={ 'By time' } position="center" />
               </Pie>
             </PieChart>
