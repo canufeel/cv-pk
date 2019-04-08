@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Section from './shared/section';
+import Entry from './entry';
 
 export default class Projects extends Component {
   renderListItem(item, i) {
@@ -45,7 +46,7 @@ export default class Projects extends Component {
     const {
       icon,
       sectionTitle,
-      categories,
+      list,
       description
     } = this.props;
     return (
@@ -58,9 +59,9 @@ export default class Projects extends Component {
         { this.renderIntro(description) }
         <div className="projects">
           {
-            categories.map((c) => {
-              return this.renderCategory(c);
-            })
+            list.map((item) => (
+              <Entry key={item.companyLink} { ...item } />
+            ))
           }
         </div>
       </Section>
@@ -69,7 +70,6 @@ export default class Projects extends Component {
 }
 
 Projects.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   description: PropTypes.string.isRequired,
   sectionTitle: PropTypes.string.isRequired,
   icon: PropTypes.string

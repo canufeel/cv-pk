@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
-import './assets/theme/styles.css';
+import './assets/theme/styles-5.css';
 import Section from './components/shared/section';
 import Sidebar from './components/sidebar';
 import Experiences from './components/experiences';
 import Projects from './components/projects';
 import Tags from './components/tags';
+import { calculateTags } from './helpers/calculate-tags';
 
 export default class CV extends Component {
   renderExperiencesSection() {
@@ -23,8 +24,21 @@ export default class CV extends Component {
     return null;
   }
   renderTags() {
-    if (this.props.tags) {
-      return (<Tags {...this.props.tags} />);
+    const {
+      projects,
+      experiences
+    } = this.props;
+
+    if (projects && experiences) {
+      const result = calculateTags({
+        projects,
+        experiences,
+      });
+      return (
+        <Tags
+          { ...{...this.props.tags, ...result } }
+        />
+      );
     }
     return null;
   }

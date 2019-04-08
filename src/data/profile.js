@@ -1,26 +1,29 @@
+import userImg from '../assets/profile.jpg';
+
 const profile = {
-  name: 'S.Berkay Aydın',
-  title: 'Full Stack Developer',
-  mail: 'sbaydin06@gmail.com',
-  phoneNumber: '+90 (507) 808 4130',
-  website: 'sbaydin.com',
-  linkedin: 'linkedin.com/in/sbaydin',
-  github: 'github.com/sbayd',
-  imagePath: 'profile.png',
+  name: 'Petr Kosikhin',
+  title: 'Lead Developer',
+  mail: 'mq3_storm@mail.ru',
+  phoneNumber: '+7 916 4190453',
+  website: '',
+  linkedin: 'linkedin.com/in/petr-kosikhin-16816113/',
+  github: 'github.com/canufeel',
+  imagePath: userImg,
   twitter: null,
   educationDetails: {
     sectionTitle: '',
     list: [
-      { name: 'BSc in CEIT', school: 'Hacettepe University', date: '2013-Present' },
+      { degree: 'BSc in Engineering', school: 'Moscow Technical university of Telecoms and Informatics', date: '2001-2006' },
+      { degree: 'MBA', school: 'Moscow School of Management Skolkovo', date: '2012-2013' }
     ]
   },
   languages: {
     sectionTitle: 'Languages',
-    list: [{ name: 'Turkish', level: 'Native' }, { name: 'English', level: 'Professional' }, { name: 'Spanish', level: 'Beginner' }]
+    list: [{ name: 'Russian', level: 'Native' }, { name: 'English', level: 'Fluent' }]
   },
   interests: {
     sectionTitle: '',
-    list: ['Pipes', 'Analog Photography', 'Cooking', 'Archery', 'Poems', 'Drums']
+    list: ['Cryptography', 'Snowboarding', 'Burgers', 'Travelling']
   }
 };
 
