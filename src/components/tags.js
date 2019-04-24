@@ -46,22 +46,6 @@ export default class Tags extends Component {
           <div className="skillset">
             <PieChart width={600} height={300}>
               <Pie
-                data={ byUsage }
-                nameKey="tag"
-                dataKey="count"
-                label={labelBuilderPercentage}
-                innerRadius={70}
-                outerRadius={90}
-                fill="#42A8C0"
-              >
-                {
-                  byUsage.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
-                }
-                <Label value={ 'In project terms' } position="center" />
-              </Pie>
-            </PieChart>
-            <PieChart width={600} height={300}>
-              <Pie
                 data={ byTime }
                 nameKey="tag"
                 dataKey="total"

@@ -12,13 +12,26 @@ export default class ContactDetails extends Component {
       case 'phone':
         href = `tel:${data}`;
         break;
+      default:
+        break;
     }
-    return (
-      <li className={className}>
-        <i className={`fa ${iconName}`} />
-        <a href={`//${href}`} target="_blank"> {data} </a>
-      </li>
-    );
+    let toReturn;
+    if (type === 'text') {
+      toReturn = (
+        <li className={className}>
+          <i className={`fa ${iconName}`} />
+          <a> {data} </a>
+        </li>
+      );
+    } else {
+      toReturn = (
+        <li className={className}>
+          <i className={`fa ${iconName}`} />
+          <a href={`//${href}`} target="_blank"> {data} </a>
+        </li>
+      );
+    }
+    return toReturn;
   }
   render() {
     return (
@@ -29,6 +42,7 @@ export default class ContactDetails extends Component {
           {this.renderListItem('website', this.props.website, 'fa-globe', 'link')}
           {this.renderListItem('linkedin', this.props.linkedin, 'fa-linkedin', 'link')}
           {this.renderListItem('github', this.props.github, 'fa-github', 'link')}
+          {this.renderListItem('location', this.props.location, 'fa-map-marker', 'text')}
           {this.renderListItem('twitter', this.props.twitter, 'fa-twitter', 'link')}
         </ul>
       </div>

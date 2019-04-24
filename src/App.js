@@ -9,6 +9,8 @@ import Experiences from './components/experiences';
 import Projects from './components/projects';
 import Tags from './components/tags';
 import { calculateTags } from './helpers/calculate-tags';
+import EducationDetails from './components/sidebar/educationDetails';
+import Education from './components/education';
 
 export default class CV extends Component {
   renderExperiencesSection() {
@@ -42,9 +44,7 @@ export default class CV extends Component {
     }
     return null;
   }
-  renderOpenSourcePart() {
-    return (<div>You can create your own CV like this, <a href="https://github.com/sbayd/react-cv-template" target="_blank">access to the source code.</a></div>);
-  }     
+
   renderCareerProfile() {
     const { icon, sectionTitle, description } = this.props.careerProfile;
     const innerContent = (<div className="summary" dangerouslySetInnerHTML={{ __html: description }} />);
@@ -59,6 +59,13 @@ export default class CV extends Component {
     );
   }
 
+  renderEducationDetails(educationDetails) {
+    if (educationDetails) {
+      return (<EducationDetails list={educationDetails.list} title={educationDetails.sectionTitle} />);
+    }
+    return null;
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -67,10 +74,13 @@ export default class CV extends Component {
         />
         <div className="main-wrapper">
           {this.renderCareerProfile()}
+          {this.renderTags()}
           {this.renderExperiencesSection()}
           {this.renderProjectsSection()}
-          {this.renderTags()}
-          {this.renderOpenSourcePart()}
+          <Education
+            icon={ 'graduation-cap' }
+            list={this.props.profile.educationDetails.list}
+          />
         </div>
       </div>
     );

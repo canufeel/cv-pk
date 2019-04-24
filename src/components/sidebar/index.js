@@ -37,13 +37,7 @@ export default class Sidebar extends Component {
 
   renderContactDetails() {
     return (<ContactDetails
-      mail={this.props.mail}
-      phoneNumber={this.props.phoneNumber}
-      website={this.props.website}
-      linkedin={this.props.linkedin}
-      github={this.props.github}
-      title={this.props.title}
-      twitter={this.props.twitter}
+      { ...this.props }
     />);
   }
 
@@ -52,9 +46,6 @@ export default class Sidebar extends Component {
       <div className="sidebar-wrapper">
         {this.renderProfileContainer()}
         {this.renderContactDetails()}
-        {this.renderEducationDetails()}
-        {this.renderLanguages()}
-        {this.renderInterests()}
       </div>
     );
   }

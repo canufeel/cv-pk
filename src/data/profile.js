@@ -1,15 +1,15 @@
-import userImg from '../assets/profile.jpg';
 
 const profile = {
   name: 'Petr Kosikhin',
-  title: 'Lead Developer',
-  mail: 'mq3_storm@mail.ru',
-  phoneNumber: '+7 916 4190453',
+  title: '',
+  mail: 'petr.kosikhin@gmail.com',
+  phoneNumber: '+1 415 5136533',
   website: '',
   linkedin: 'linkedin.com/in/petr-kosikhin-16816113/',
   github: 'github.com/canufeel',
-  imagePath: userImg,
+  // imagePath: userImg,
   twitter: null,
+  location: 'San Francisco, CA',
   educationDetails: {
     sectionTitle: '',
     list: [
@@ -19,7 +19,7 @@ const profile = {
   },
   languages: {
     sectionTitle: 'Languages',
-    list: [{ name: 'Russian', level: 'Native' }, { name: 'English', level: 'Fluent' }]
+    list: [{ name: 'English', level: 'Fluent' }, { name: 'Russian', level: 'Native' }]
   },
   interests: {
     sectionTitle: '',

@@ -219,7 +219,7 @@ p {
 .main-wrapper .projects-section .intro {
   margin-bottom: 30px;
 }
-.skillset .item {
+.skillset .skill-item {
   margin-bottom: 15px;
   overflow: hidden;
 }
@@ -312,7 +312,7 @@ p {
   flex-wrap: wrap;
 }
 
-.tag-cloud .item {
+.tag-cloud .skill-item {
   border-radius: 0.25rem;
   margin: 5px;
   background-color: #757f8d;
@@ -361,4 +361,16 @@ ul.skillset {
 
 img.profile {
   border-radius: 50%;
+}
+
+.fa-map-marker {
+  margin-left: 3px;
+}
+
+.projects-section .projects .item {
+  margin-bottom: 20px;
+}
+
+.experiences-section .projects .item {
+  margin-bottom: 20px;
 }

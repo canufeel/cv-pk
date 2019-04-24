@@ -28,7 +28,7 @@ const Entry = ({
         { !!tags && tags.length ? (
           <div className="skillset">
             { tags.map((tag) => (
-              <div className="item" key={tag}>
+              <div className="skill-item" key={tag}>
                 { tag }
               </div>
             ))
